@@ -33,6 +33,12 @@ function addRiskItem(riskName, riskLevel, department) {
     resolveButton.classList.add("resolveButton"); // Add the "resolveButton" class to the button
     resolveButton.textContent = "Resolve"; // Set the button text to "Resolve"
 
+     // Task 3: Removing Risk Items
+     resolveButton.addEventListener("click", function (event) {
+        event.stopPropagation(); // Stop propagation to avoid triggering unintended actions
+        riskDashboard.removeChild(riskCard); // Remove the risk card from the dashboard when the resolve button is clicked
+    });
+
     // Task 2: Adding Risk Items Dynamically
 document.getElementById("riskForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the form from submitting normally
