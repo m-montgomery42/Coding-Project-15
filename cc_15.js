@@ -39,6 +39,11 @@ function addRiskItem(riskName, riskLevel, department) {
         riskDashboard.removeChild(riskCard); // Remove the risk card from the dashboard when the resolve button is clicked
     });
 
+    // Task 6: Handling Event Propagation
+    riskCard.addEventListener("click", function (event) {
+        event.stopPropagation(); // Stop propagation when clicking inside the card to prevent other events
+    });
+
     // Task 4: Categorizing Risks by Level
     updateRiskCardStyle(riskCard, riskLevel); // Update the background color of the card based on the risk level
 
@@ -104,3 +109,11 @@ document.getElementById("riskForm").addEventListener("submit", function (event) 
 // Task 5: Implementing Bulk Updates
 // Increase all risk levels
 document.getElementById("increaseRiskLevels").addEventListener("click", increaseRiskLevels); // Add event listener for the button to increase risk levels
+
+// Test cases
+addRiskItem("Safety Violations", "High", "IT"); // Test case: Add a high-risk item
+addRiskItem("Product Recall", "Medium", "Quality Assurance"); // Test case: Add a medium-risk item
+addRiskItem("Budget Cuts", "High", "Finance"); // Test case: Add a high-risk item
+addRiskItem("Inaccurate Bookkeeping", "High", "Accounting"); // Test case: Add a high-risk item
+addRiskItem("Employee Absences", "Low", "Human Resources"); // Test case: Add a low-risk item
+addRiskItem("Low Inventory", "Low", "Supply"); // Test case: Add a low-risk item
