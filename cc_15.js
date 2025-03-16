@@ -51,6 +51,28 @@ function addRiskItem(riskName, riskLevel, department) {
     riskDashboard.appendChild(riskCard); // Append the risk card to the dashboard
 }
 
+// task 5: Implementing Bulk Updates
+function increaseRiskLevels () {
+    const riskCards = document.querySelectorAll(".riskCard"); // Select all risk cards
+    riskCards.forEach((riskCard) => {
+        const riskLevelText = riskCard.querySelector(".riskLevelText"); // Get the risk level text
+        let currentLevel = riskLevelText.textContent.trim(); // Get the current risk level text
+
+        switch (currentLevel.toLowerCase()) {
+            case "low":
+                riskLevelText.textContent = "medium"; // Update text to "medium"
+                updateRiskCardStyle(riskCard, "medium"); // Update card style to medium
+                break;
+            case "medium":
+                riskLevelText.textContent = "high"; // Update text to "high"
+                updateRiskCardStyle(riskCard, "high"); // Update card style to high
+                break;
+            case "high":
+                default:
+        }
+    });
+}
+
 // Task 4: Categorizing Risks by Level
 function updateRiskCardStyle(riskCard, riskLevel) {
     switch (riskLevel.toLowerCase()) {
@@ -78,3 +100,7 @@ document.getElementById("riskForm").addEventListener("submit", function (event) 
     addRiskItem(riskName, riskLevel, department); // Add the new risk item to the dashboard
     document.getElementById("riskForm").reset(); // Reset the form fields
 });
+
+// Task 5: Implementing Bulk Updates
+// Increase all risk levels
+document.getElementById("increaseRiskLevels").addEventListener("click", increaseRiskLevels); // Add event listener for the button to increase risk levels
