@@ -111,7 +111,7 @@ document.getElementById("riskForm").addEventListener("submit", function (event) 
 document.getElementById("increaseRiskLevels").addEventListener("click", increaseRiskLevels); // Add event listener for the button to increase risk levels
 
 // Test cases
-addRiskItem("Safety Violations", "High", "IT"); // Test case: Add a high-risk item
+addRiskItem("Virus Detection", "High", "IT"); // Test case: Add a high-risk item
 addRiskItem("Product Recall", "Medium", "Quality Assurance"); // Test case: Add a medium-risk item
 addRiskItem("Budget Cuts", "High", "Finance"); // Test case: Add a high-risk item
 addRiskItem("Inaccurate Bookkeeping", "High", "Accounting"); // Test case: Add a high-risk item
