@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Dashboard</title>
+    
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Main Section */
+        main {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #004080;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003366;
+        }
+
+       /* Container for the risk cards */
+#riskDashboard {
+    display: flex; /* Use flexbox to arrange the cards side by side */
+    flex-wrap: wrap; /* Allow cards to wrap onto a new line if the screen is too narrow */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* Add some space between the cards */
+}
+
+/* Style for the risk cards */
+.riskCard {
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height to make it square */
+    margin: 10px; /* Add some margin around each card */
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensure padding and border are included in the card’s width/height */
+}
+
+/* Style for the text inside the risk card */
+.riskCard div {
+    margin: 5px 0; /* Add margin between text elements */
+}
+
+/* Bold the labels inside the risk card */
+.riskCard .riskLabel {
+    font-weight: bold; /* Make the label text bold */
+}
+
+        .low-risk {
+            background-color: green;
+        }
+
+        .medium-risk {
+            background-color: yellow;
+            color: black;
+        }
+
+        .high-risk {
+            background-color: red;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Risk Management Dashboard</h1>
+    </header>
+
+    <main>
+        <section id="riskFormSection">
+            <h2>Add a New Risk</h2>
+            <form id="riskForm">
+                <label for="riskName">Risk Name:</label>
+                <input type="text" id="riskName" required>
+
+                <label for="riskLevel">Risk Level:</label>
+                <select id="riskLevel">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <label for="department">Department:</label>
+                <input type="text" id="department" required>
+
+                <button type="submit">Add Risk</button>
+            </form>
+        </section>
+
+        <section id="riskDashboard">
+            <h2>Current Risks</h2>
+        </section>
+
+        <button id="increaseRiskLevels">Increase Risk Levels</button>
+    </main>
+
+    <footer>
+        <p>Risk Management System</p>
+    </footer>
+
+    <script src="cc_15.js"></script>
+</body>
+</html>
