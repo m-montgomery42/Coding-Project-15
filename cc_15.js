@@ -39,6 +39,35 @@ function addRiskItem(riskName, riskLevel, department) {
         riskDashboard.removeChild(riskCard); // Remove the risk card from the dashboard when the resolve button is clicked
     });
 
+    // Task 4: Categorizing Risks by Level
+    updateRiskCardStyle(riskCard, riskLevel); // Update the background color of the card based on the risk level
+
+    // Append the elements to the risk card
+    riskCard.appendChild(riskNameElem); // Append the risk name element to the risk card
+    riskCard.appendChild(riskLevelElem); // Append the risk level element to the risk card
+    riskCard.appendChild(departmentElem); // Append the department element to the risk card
+    riskCard.appendChild(resolveButton); // Append the resolve button to the risk card
+
+    riskDashboard.appendChild(riskCard); // Append the risk card to the dashboard
+}
+
+// Task 4: Categorizing Risks by Level
+function updateRiskCardStyle(riskCard, riskLevel) {
+    switch (riskLevel.toLowerCase()) {
+        case "low":
+            riskCard.style.backgroundColor = "green"; // Set background to green for low
+            break;
+        case "medium":
+            riskCard.style.backgroundColor = "yellow"; // Set background to yellow for medium
+            break;
+        case "high":
+            riskCard.style.backgroundColor = "red"; // Set background to red for high
+            break;
+        default:
+            riskCard.style.backgroundColor = "white"; // Default background color
+    }
+}
+
     // Task 2: Adding Risk Items Dynamically
 document.getElementById("riskForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the form from submitting normally
